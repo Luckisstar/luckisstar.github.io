@@ -1,3 +1,9 @@
 theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: Luckisstar
+description: Luckisstar의 GitHub Pages 블로그
+url: "https://luckisstar.github.io"
+baseurl: ""
+lang: ko
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
