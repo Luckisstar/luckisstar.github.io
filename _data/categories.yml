@@ -1,0 +1,10 @@
+# 좌측 사이드바에 표시할 카테고리(폴더) 목록
+- slug: papers
+  name: 논문 소개
+  icon: 📄
+- slug: tech
+  name: 기술 소개
+  icon: 🛠
+- slug: opensource
+  name: 오픈소스 소개
+  icon: 📦
