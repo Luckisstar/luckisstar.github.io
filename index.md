@@ -7,12 +7,16 @@ title: Home
 
 **Luckisstar**의 GitHub Pages에 오신 것을 환영합니다.
 
-- [About](./about.html)
+## 카테고리
+
+- [📄 논문 소개]({{ "/papers.html" | relative_url }}) ({{ site.categories.papers | size }})
+- [🛠 기술 소개]({{ "/tech.html" | relative_url }}) ({{ site.categories.tech | size }})
+- [About]({{ "/about.html" | relative_url }})
 
 ## 최근 글
 
 <ul>
-  {% for post in site.posts %}
+  {% for post in site.posts limit:10 %}
     <li>
       <span>{{ post.date | date: "%Y-%m-%d" }}</span> —
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
