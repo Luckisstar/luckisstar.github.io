@@ -20,8 +20,9 @@
       .side-nav li { margin: 3px 0; line-height: 1.4; }
       .side-nav li.current a { font-weight: bold; color: #222; }
       section th, section td { word-break: keep-all; }
-    #visit-stats span { font-variant-numeric: tabular-nums; }
-    #visit-stats:has(span:empty) { visibility: hidden; }
+    #visit-stats span, #page-stats span { font-variant-numeric: tabular-nums; }
+    #visit-stats:has(span:empty), #page-stats:has(span:empty) { visibility: hidden; }
+    .page-stats { margin-top: -10px; font-size: 13px; color: #888; }
       section th:first-child, section td:first-child { white-space: nowrap; }
       @media print, screen and (min-width: 961px) {
         header { max-height: calc(100vh - 170px); overflow-y: auto; }
@@ -67,6 +68,24 @@
       <section>
 
       {{ content }}
+
+      {% if page.date %}
+      <p id="page-stats" class="page-stats">조회수 <span id="vercount_value_page_pv"></span>회</p>
+      <script>
+        // 글 제목 바로 아래로 옮기고, 이 글의 직전 조회수를 먼저 보여 준 뒤 Vercount 값으로 갱신한다
+        (function () {
+          var stats = document.getElementById("page-stats");
+          var pv = document.getElementById("vercount_value_page_pv");
+          var h1 = document.querySelector("section h1");
+          if (h1) h1.insertAdjacentElement("afterend", stats);
+          var key = "pagePv:" + location.pathname;
+          try { pv.textContent = localStorage.getItem(key) || ""; } catch (e) {}
+          new MutationObserver(function () {
+            try { if (pv.textContent) localStorage.setItem(key, pv.textContent); } catch (e) {}
+          }).observe(pv, { childList: true, characterData: true, subtree: true });
+        })();
+      </script>
+      {% endif %}
 
       </section>
       <footer>
