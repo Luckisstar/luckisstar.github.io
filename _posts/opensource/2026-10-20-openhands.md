@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[오픈소스 소개] OpenHands: 코딩 에이전트를 직접 운영하는 셀프 호스팅 관제 센터"
+description: "여러 AI 코딩 에이전트를 내 인프라에서 운영하는 셀프 호스팅 플랫폼 OpenHands의 구조, 설치, 실전 활용법과 다른 코딩 에이전트 도구 비교를 정리했습니다."
 date: 2026-10-20
 categories: [opensource]
 ---

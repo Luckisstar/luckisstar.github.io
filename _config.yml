@@ -1,9 +1,10 @@
 theme: jekyll-theme-minimal
 title: Luckisstar
-description: Luckisstar의 GitHub Pages 블로그
+description: "AI 논문, 최신 기술, 개발자에게 유용한 오픈소스 프로젝트를 한국어로 깊이 있게 소개하는 블로그입니다."
 url: "https://luckisstar.github.io"
 baseurl: ""
 lang: ko
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap

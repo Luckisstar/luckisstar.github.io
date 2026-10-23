@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[기술 소개] '미국판 DeepSeek' Reflection AI의 오픈 모델 Beam"
+description: "Reflection AI가 공개한 미국산 오픈 모델 Beam의 성능, 대규모 강화학습 방식, 중국 오픈 모델과의 비교와 의미를 한국어로 정리했습니다."
 date: 2026-10-20
 categories: [tech]
 ---

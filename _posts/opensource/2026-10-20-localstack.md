@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[오픈소스 소개] LocalStack: 내 PC에서 돌리는 AWS 클라우드 에뮬레이터"
+description: "AWS 서비스를 내 PC와 CI에서 에뮬레이션하는 LocalStack의 동작 원리, Lambda·S3·DynamoDB 예제, 인증 토큰 정책 변경 등 최신 현황을 정리했습니다."
 date: 2026-10-20
 categories: [opensource]
 ---

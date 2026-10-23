@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[오픈소스 소개] SurrealDB: 문서, 그래프, 벡터를 한 엔진에 담은 멀티모델 데이터베이스"
+description: "문서·그래프·벡터·키-값 데이터를 SurrealQL 하나로 다루는 멀티모델 DB SurrealDB의 구조, 권한과 실시간 쿼리, BSL 1.1 라이선스 주의점을 정리했습니다."
 date: 2026-10-20
 categories: [opensource]
 ---

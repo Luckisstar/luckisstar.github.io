@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[오픈소스 소개] Streamlit: 파이썬 스크립트를 몇 분 만에 웹 앱으로"
+description: "파이썬 스크립트만으로 대시보드와 LLM 챗봇을 만드는 Streamlit의 재실행 모델, 캐싱과 세션 상태, 배포 방법, Gradio·Dash 비교를 정리했습니다."
 date: 2026-10-20
 categories: [opensource]
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[오픈소스 소개] ShellCheck: 셸 스크립트의 실수를 미리 잡아주는 정적 분석 도구"
+description: "bash·sh 스크립트의 흔한 실수를 실행 전에 잡아 주는 정적 분석 도구 ShellCheck의 주요 경고(SC 코드), 에디터·CI 연동, 실무 팁을 정리했습니다."
 date: 2026-10-20
 categories: [opensource]
 ---

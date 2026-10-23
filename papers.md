@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 논문 소개
+description: "AI·머신러닝 논문을 한국어로 요약하고 핵심 아이디어와 의미를 정리한 글 모음입니다."
 permalink: /papers.html
 ---
 

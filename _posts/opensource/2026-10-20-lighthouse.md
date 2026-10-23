@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[오픈소스 소개] Lighthouse: 웹 페이지의 성능·접근성·SEO를 점수로 진단하는 자동 감사 도구"
+description: "웹 페이지의 성능·접근성·권장사항·SEO를 점수로 진단하는 Lighthouse의 동작 원리, 성능 점수 가중치, CLI·Node·CI(LHCI) 활용법을 정리했습니다."
 date: 2026-10-20
 categories: [opensource]
 ---

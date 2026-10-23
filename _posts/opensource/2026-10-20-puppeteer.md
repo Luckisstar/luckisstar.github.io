@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[오픈소스 소개] Puppeteer: 코드로 Chrome·Firefox를 조종하는 브라우저 자동화 라이브러리"
+description: "코드로 Chrome·Firefox를 조종하는 Node.js 브라우저 자동화 라이브러리 Puppeteer의 핵심 개념, 스크린샷·PDF·크롤링 예제, Playwright 비교를 정리했습니다."
 date: 2026-10-20
 categories: [opensource]
 ---

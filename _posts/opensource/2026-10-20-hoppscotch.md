@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "[오픈소스 소개] Hoppscotch: 가볍고 빠른 오픈소스 Postman 대안"
+description: "가볍고 빠른 오픈소스 Postman 대안 Hoppscotch의 REST·GraphQL·실시간 API 테스트, 환경 변수와 스크립트, CLI, 셀프 호스팅 방법을 정리했습니다."
 date: 2026-10-20
 categories: [opensource]
 ---
