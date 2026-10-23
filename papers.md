@@ -7,10 +7,6 @@ permalink: /papers.html
 
 # 논문 소개
 
-<ul>
-  {% for post in site.categories.papers %}
-    <li><span>{{ post.date | date: "%Y-%m-%d" }}</span> — <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+{% include post-list.html posts=site.categories.papers limit=1000 %}
 
 [← Home]({{ "/" | relative_url }})

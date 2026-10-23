@@ -1,0 +1,4 @@
+{% comment %} "[카테고리] 이름: 부제" 제목을 tp_name(이름)과 tp_sub(부제)로 나눈다. 콜론이 없으면 tp_sub는 빈 문자열. {% endcomment %}
+{%- assign tp_full = include.title | remove_first: "[" | split: "] " | last -%}
+{%- assign tp_name = tp_full | split: ": " | first -%}
+{%- assign tp_sub = tp_full | remove_first: tp_name | remove_first: ": " -%}

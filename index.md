@@ -16,11 +16,4 @@ title: Home
 
 ## 최근 글
 
-<ul>
-  {% for post in site.posts limit:10 %}
-    <li>
-      <span>{{ post.date | date: "%Y-%m-%d" }}</span> —
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% include post-list.html posts=site.posts limit=10 show_category=true %}

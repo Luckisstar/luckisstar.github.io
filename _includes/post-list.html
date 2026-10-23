@@ -1,0 +1,19 @@
+{% comment %} 글 목록. include.posts(필수), include.limit(필수), include.show_category(선택) {% endcomment %}
+<ul class="post-list">
+  {%- for post in include.posts limit: include.limit %}
+  {%- include title-parts.html title=post.title %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      <span class="pl-name">{{ tp_name }}</span>
+      {%- if tp_sub != "" %}<span class="pl-sub">{{ tp_sub }}</span>{% endif %}
+    </a>
+    <span class="pl-meta">
+      {%- if include.show_category -%}
+        {%- assign pl_cat = site.data.categories | where: "slug", post.categories[0] | first -%}
+        {%- if pl_cat %}{{ pl_cat.icon }} {{ pl_cat.name }} · {% endif -%}
+      {%- endif -%}
+      {{ post.date | date: "%Y-%m-%d" }}
+    </span>
+  </li>
+  {%- endfor %}
+</ul>
