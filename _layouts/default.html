@@ -20,6 +20,8 @@
       .side-nav li { margin: 3px 0; line-height: 1.4; }
       .side-nav li.current a { font-weight: bold; color: #222; }
       section th, section td { word-break: keep-all; }
+    #visit-stats span { font-variant-numeric: tabular-nums; }
+    #visit-stats:has(span:empty) { visibility: hidden; }
       section th:first-child, section td:first-child { white-space: nowrap; }
       @media print, screen and (min-width: 961px) {
         header { max-height: calc(100vh - 170px); overflow-y: auto; }
@@ -71,7 +73,17 @@
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
-        <p><small>방문자 <span id="vercount_value_site_uv">-</span>명 · 조회수 <span id="vercount_value_site_pv">-</span>회</small></p>
+        <p id="visit-stats"><small>방문자 <span id="vercount_value_site_uv"></span>명 · 조회수 <span id="vercount_value_site_pv"></span>회</small></p>
+        <script>
+          // Vercount 응답 전까지 직전 방문 때 저장된 값을 먼저 보여 줘 깜빡임을 없앤다
+          try {
+            var vc = JSON.parse(localStorage.getItem("visitorCountData"));
+            if (vc && vc.site_pv) {
+              document.getElementById("vercount_value_site_uv").textContent = vc.site_uv;
+              document.getElementById("vercount_value_site_pv").textContent = vc.site_pv;
+            }
+          } catch (e) {}
+        </script>
         <script defer src="https://events.vercount.one/js"></script>
       </footer>
     </div>
