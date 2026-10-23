@@ -1,0 +1,43 @@
+{% comment %} 같은 카테고리 안에서 이전/다음 글과 다른 글 목록을 보여 준다. site.categories는 최신 글이 먼저다. {% endcomment %}
+{% assign cat_slug = page.categories | first %}
+{% assign cat_posts = site.categories[cat_slug] %}
+{% if cat_posts and cat_posts.size > 1 %}
+  {% assign cat_info = site.data.categories | where: "slug", cat_slug | first %}
+  {% for p in cat_posts %}{% if p.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+  {% assign older_idx = idx | plus: 1 %}
+  {% assign newer_idx = idx | minus: 1 %}
+  {% assign older = cat_posts[older_idx] %}
+  {% if newer_idx >= 0 %}{% assign newer = cat_posts[newer_idx] %}{% else %}{% assign newer = nil %}{% endif %}
+
+  <nav class="post-nav">
+    <div class="post-nav-links">
+      {% if older %}
+      <a class="post-nav-prev" href="{{ older.url | relative_url }}"><span>← 이전 글</span>{{ older.title | remove_first: "[" | split: "] " | last }}</a>
+      {% endif %}
+      {% if newer %}
+      <a class="post-nav-next" href="{{ newer.url | relative_url }}"><span>다음 글 →</span>{{ newer.title | remove_first: "[" | split: "] " | last }}</a>
+      {% endif %}
+    </div>
+
+    {% assign shown = 0 %}
+    {% capture others %}
+      {% for p in cat_posts offset: older_idx %}
+        {% if shown < 5 and p.url != page.url and p.url != older.url and p.url != newer.url %}
+          <li><a href="{{ p.url | relative_url }}">{{ p.title | remove_first: "[" | split: "] " | last }}</a></li>
+          {% assign shown = shown | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+      {% for p in cat_posts %}
+        {% if shown < 5 and p.url != page.url and p.url != older.url and p.url != newer.url and forloop.index0 < idx %}
+          <li><a href="{{ p.url | relative_url }}">{{ p.title | remove_first: "[" | split: "] " | last }}</a></li>
+          {% assign shown = shown | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    {% endcapture %}
+    {% if shown > 0 %}
+    <h3>{{ cat_info.icon }} {{ cat_info.name }}의 다른 글</h3>
+    <ul>{{ others }}</ul>
+    <p><a href="{{ "/" | append: cat_slug | append: ".html" | relative_url }}">전체 목록 보기 ({{ cat_posts.size }})</a></p>
+    {% endif %}
+  </nav>
+{% endif %}

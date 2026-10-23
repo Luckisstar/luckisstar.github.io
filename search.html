@@ -1,0 +1,86 @@
+---
+layout: default
+title: 검색
+permalink: /search.html
+sitemap: false
+---
+
+<h1>검색</h1>
+
+<form class="search-form" action="{{ "/search.html" | relative_url }}" onsubmit="return false">
+  <input type="search" id="search-input" name="q" placeholder="검색어를 입력하세요 (예: 보안, Docker, 다이어그램)" autocomplete="off" autofocus>
+</form>
+<p id="search-status" class="search-status"></p>
+<ol id="search-results" class="search-results"></ol>
+
+<script>
+  (function () {
+    var input = document.getElementById("search-input");
+    var status = document.getElementById("search-status");
+    var list = document.getElementById("search-results");
+    var docs = null;
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+      });
+    }
+    function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+    function count(text, term) {
+      var n = 0, i = text.indexOf(term);
+      while (i !== -1 && n < 20) { n++; i = text.indexOf(term, i + term.length); }
+      return n;
+    }
+
+    // 본문에서 첫 검색어 주변 문장을 잘라 강조한다
+    function snippet(doc, terms) {
+      var text = doc.content, lower = text.toLowerCase(), at = -1;
+      for (var i = 0; i < terms.length && at === -1; i++) at = lower.indexOf(terms[i]);
+      if (at === -1) return escapeHtml(doc.description || text.slice(0, 160));
+      var start = Math.max(0, at - 60), end = Math.min(text.length, at + 120);
+      var out = escapeHtml((start > 0 ? "… " : "") + text.slice(start, end) + (end < text.length ? " …" : ""));
+      return out.replace(new RegExp("(" + terms.map(function (t) { return escapeRe(escapeHtml(t)); }).join("|") + ")", "gi"), "<mark>$1</mark>");
+    }
+
+    function search(q) {
+      var terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+      history.replaceState(null, "", q ? "?q=" + encodeURIComponent(q) : location.pathname);
+      list.innerHTML = "";
+      if (!terms.length) { status.textContent = ""; return; }
+      var hits = docs.map(function (d) {
+        var title = d.title.toLowerCase(), desc = d.description.toLowerCase(), body = d.content.toLowerCase(), score = 0;
+        for (var i = 0; i < terms.length; i++) {
+          var t = terms[i], s = count(title, t) * 10 + count(desc, t) * 3 + count(body, t);
+          if (!s) return null;
+          score += s;
+        }
+        return { doc: d, score: score };
+      }).filter(Boolean).sort(function (a, b) { return b.score - a.score; });
+
+      status.textContent = hits.length ? "‘" + q + "’ 검색 결과 " + hits.length + "건" : "‘" + q + "’에 대한 검색 결과가 없습니다.";
+      list.innerHTML = hits.map(function (h) {
+        var d = h.doc;
+        return '<li><a href="' + d.url + '">' + escapeHtml(d.title) + "</a>" +
+          '<div class="search-meta">' + escapeHtml(d.category) + " · " + d.date + "</div>" +
+          '<div class="search-snippet">' + snippet(d, terms) + "</div></li>";
+      }).join("");
+    }
+
+    var timer;
+    input.addEventListener("input", function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () { if (docs) search(input.value.trim()); }, 150);
+    });
+
+    var q = new URLSearchParams(location.search).get("q") || "";
+    input.value = q;
+    status.textContent = "검색 색인을 불러오는 중…";
+    fetch("{{ "/search.json" | relative_url }}")
+      .then(function (r) { return r.json(); })
+      .then(function (data) { docs = data; status.textContent = ""; search(input.value.trim()); })
+      .catch(function () { status.textContent = "검색 색인을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요."; });
+  })();
+</script>
+
+<p><a href="{{ "/" | relative_url }}">← Home</a></p>
