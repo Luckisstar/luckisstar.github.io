@@ -26,7 +26,8 @@ items:
     sources:
       - https://arxiv.org/abs/2610.18784
     proposed_at: 2026-10-24
-    status: approved
+    status: published
+    post: _posts/papers/2026-10-24-pack-light-carryon.md
   - id: player-1-synthetic-experience
     category: papers
     title: "Player-1: 합성 환경 강화학습으로 컴퓨터 사용 모델에게 게임 조작을 가르치기"
@@ -35,7 +36,8 @@ items:
     sources:
       - https://arxiv.org/abs/2610.20584
     proposed_at: 2026-10-24
-    status: approved
+    status: published
+    post: _posts/papers/2026-10-24-player-1-synthetic-experience.md
   - id: agent-skills-aaif
     category: tech
     title: "Agent Skills 표준, Linux Foundation 산하 AAIF로: MCP에 이은 두 번째 에이전트 표준 기증"
@@ -55,7 +57,8 @@ items:
     sources:
       - https://claude.com/blog/claude-duet
     proposed_at: 2026-10-24
-    status: approved
+    status: published
+    post: _posts/tech/2026-10-24-claude-duet.md
   - id: orca
     category: opensource
     title: "Orca: 여러 코딩 에이전트를 워크트리별로 병렬 실행하고 관리하는 작업 공간"
@@ -74,3 +77,299 @@ items:
       - https://github.com/heygen-com/hyperframes
     proposed_at: 2026-10-24
     status: approved
+  - id: cache-engineering-agents
+    category: papers
+    title: "Cache Engineering for Agents: 텍스트 대신 KV 캐시를 직접 지우는 에이전트 컨텍스트 관리"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-cache-engineering-agents.md
+  - id: chain-of-thought
+    category: papers
+    title: "Chain-of-Thought Prompting: 예시에 풀이 과정을 넣으면 큰 모델이 추론한다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-chain-of-thought.md
+  - id: chinchilla
+    category: papers
+    title: "Chinchilla: 같은 연산이라면 모델은 작게, 데이터는 많이"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-chinchilla.md
+  - id: cortex-parametric-memory
+    category: papers
+    title: "Cortex: 프롬프트에 넣던 컨텍스트를 FFN 가중치로 응고시키기"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-cortex-parametric-memory.md
+  - id: doc2harness
+    category: papers
+    title: "Doc2Harness: 문서만 보고 코딩 에이전트 하네스를 처음부터 짓게 하는 벤치마크"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-doc2harness.md
+  - id: dpo
+    category: papers
+    title: "DPO: 보상 모델과 강화학습 없이 선호 데이터로 바로 정렬하기"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-dpo.md
+  - id: harness-squared
+    category: papers
+    title: "Harness²: 정답 검증기 없이 에이전트 하네스를 스스로 고치는 2단 재귀"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-harness-squared.md
+  - id: instructgpt
+    category: papers
+    title: "InstructGPT: 사람 피드백으로 1.3B 모델이 175B GPT-3를 이기게 만든 RLHF"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-instructgpt.md
+  - id: last-secure-code-benchmark
+    category: papers
+    title: "LSCBench: 바이브 코딩한 코드, 돌아가지만 안전하지는 않다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-last-secure-code-benchmark.md
+  - id: lora
+    category: papers
+    title: "LoRA: 원래 가중치는 얼리고 저랭크 행렬 두 개만 학습하는 미세조정"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-lora.md
+  - id: rag-compositionality-lasagna
+    category: papers
+    title: "RAG Compositionality(LASAGNA): 따로 잰 RAG 기법의 이득은 합쳐지지 않는다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-rag-compositionality-lasagna.md
+  - id: rag
+    category: papers
+    title: "RAG: 검색기와 생성기를 함께 학습해 '찾아서 답하는' 모델을 만들다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-rag.md
+  - id: react
+    category: papers
+    title: "ReAct: 생각하고, 행동하고, 관찰하는 루프로 LLM 에이전트의 원형을 만들다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-react.md
+  - id: remory-context-compaction
+    category: papers
+    title: "Remory: 컨텍스트 컴팩션 요약 뒤에 학습된 '잔차 메모리'를 붙이다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-remory-context-compaction.md
+  - id: swe-bench
+    category: papers
+    title: "SWE-bench: 실제 GitHub 이슈로 언어 모델의 코딩 실력을 재다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-swe-bench.md
+  - id: tokenrouter
+    category: papers
+    title: "TokenRouter: 토큰마다 모델을 바꾸는 라우팅을 실제로 서빙하는 법"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-tokenrouter.md
+  - id: toolformer
+    category: papers
+    title: "Toolformer: 언어 모델이 도구 쓰는 법을 스스로 학습 데이터로 만들다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-toolformer.md
+  - id: transformer
+    category: papers
+    title: "Attention Is All You Need: 순환 없이 어텐션만으로 만든 트랜스포머"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/papers/2026-10-24-transformer.md
+  - id: agents-md
+    category: tech
+    title: "AGENTS.md: 코딩 에이전트에게 저장소 사용법을 알려 주는 표준 파일"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-agents-md.md
+  - id: claude-haiku-5-5
+    category: tech
+    title: "Claude Haiku 5.5: 서브에이전트용 소형 모델과 캐시 가격이 바꾸는 에이전트 비용"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-claude-haiku-5-5.md
+  - id: context-engineering
+    category: tech
+    title: "컨텍스트 엔지니어링: 프롬프트 엔지니어링 다음, 에이전트에게 무엇을 보여 줄 것인가"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-context-engineering.md
+  - id: deepseek-v4-1-flash-1017
+    category: tech
+    title: "DeepSeek-V4.1-Flash-1017: 점수보다 '과제당 비용'을 내세운 마이너 업데이트"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-deepseek-v4-1-flash-1017.md
+  - id: function-calling
+    category: tech
+    title: "함수 호출과 구조화된 출력: LLM이 JSON과 도구를 다루는 방식"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-function-calling.md
+  - id: github-package-firewall
+    category: tech
+    title: "GitHub package firewall: 에이전트와 CI의 npm 설치 앞에 놓는 정책 관문"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-github-package-firewall.md
+  - id: google-gemini-4-argon
+    category: tech
+    title: "Gemini 4 Argon: 1M 토큰을 한 번에 출력하는 장기 실행형 프런티어 모델"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-google-gemini-4-argon.md
+  - id: ibm-granite-switch-4-1
+    category: tech
+    title: "IBM Granite Switch 4.1: 어댑터를 합쳐 한 엔드포인트에서 채팅·판단·음성인식까지"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-ibm-granite-switch-4-1.md
+  - id: kv-cache-speculative-decoding
+    category: tech
+    title: "LLM 추론 최적화 해설: KV 캐시, PagedAttention, 추측 디코딩"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-kv-cache-speculative-decoding.md
+  - id: llm-evals
+    category: tech
+    title: "LLM과 에이전트 평가(evals) 실무: 벤치마크 점수 대신 우리 서비스 기준으로 재는 법"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-llm-evals.md
+  - id: llm-quantization
+    category: tech
+    title: "LLM 양자화 해설: GPTQ, AWQ, GGUF로 내 PC에서 모델 돌리기"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-llm-quantization.md
+  - id: mcp-architecture
+    category: tech
+    title: "MCP 구조 해설: 호스트, 클라이언트, 서버와 세 가지 기본 요소"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-mcp-architecture.md
+  - id: meta-muse-spark-open
+    category: tech
+    title: "Meta Muse Spark Open: 816B MoE 오픈웨이트, 그러나 오픈소스 라이선스는 아니다"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-meta-muse-spark-open.md
+  - id: minimax-m3-1-flash
+    category: tech
+    title: "MiniMax-M3.1-Flash: 희소 어텐션, QAT, 드래프트 헤드를 체크포인트에 기본 탑재한 MoE"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-minimax-m3-1-flash.md
+  - id: mistral-large-4
+    category: tech
+    title: "Mistral Large 4: API 프리뷰 먼저, 가중치는 레드팀 뒤에 푸는 1조 파라미터 MoE"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-mistral-large-4.md
+  - id: mistral-voxtral-3
+    category: tech
+    title: "Mistral Voxtral 3: 듣기, 생각하기, 말하기, 도구 실행을 한 스트리밍 파이프라인으로"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-mistral-voxtral-3.md
+  - id: mixture-of-experts
+    category: tech
+    title: "MoE(전문가 혼합) 해설: 큰 모델을 작은 비용으로 돌리는 구조"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-mixture-of-experts.md
+  - id: prompt-caching
+    category: tech
+    title: "프롬프트 캐싱: 긴 프롬프트의 비용과 지연을 줄이는 법"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-prompt-caching.md
+  - id: reasoning-models
+    category: tech
+    title: "추론 모델과 테스트 시간 연산: 생각을 오래 하게 만든 모델들은 무엇이 다른가"
+    why: "기본 콘텐츠 확충(2026-10-24 일괄 작성)"
+    sources: []
+    proposed_at: 2026-10-24
+    status: published
+    post: _posts/tech/2026-10-24-reasoning-models.md
