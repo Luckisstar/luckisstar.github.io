@@ -17,4 +17,59 @@
 #   priority:    high | normal (선택, 기본 normal)
 #   post:        게시된 글 경로(published일 때)
 
-items: []
+items:
+  - id: pack-light-carryon
+    category: papers
+    title: "Pack Light, CarryOn: 긴 작업 에이전트의 컨텍스트를 '작업 객체'로 관리하기"
+    why: "2026-10-14 arXiv에 올라온 논문(2610.18784)으로, 지난 상호작용 기록을 그대로 다시 넣는 대신 재사용 가능한 작업 객체로 컨텍스트를 구성합니다. 2차 요약 기준 OSWorld 2.0에서 토큰 51.9% 절감과 성능 향상을 보고해 원문 확인 가치가 큽니다."
+    angle: "컨텍스트 엔지니어링(요약, 폴딩, 메모리)과 무엇이 다른지, 기록을 버린 뒤 작업 객체의 정확성을 어떻게 유지하는지. 수치는 원문 표로 다시 확인하고, 실무 에이전트 하네스에 적용할 수 있는 설계 원칙을 정리합니다."
+    sources:
+      - https://arxiv.org/abs/2610.18784
+    proposed_at: 2026-10-24
+    status: approved
+  - id: player-1-synthetic-experience
+    category: papers
+    title: "Player-1: 합성 환경 강화학습으로 컴퓨터 사용 모델에게 게임 조작을 가르치기"
+    why: "2026-10-15 Hugging Face Daily Papers 상위권(업보트 약 330개, 집계 사이트 기준)에 오른 NUS·Tencent 연구입니다. 컴퓨터 사용(computer-use) 모델을 시연 데이터 SFT 뒤 16개 합성 2D·3D 환경에서 PPO로 후학습해 MineDojo-300 성공률을 크게 올렸다고 보고합니다."
+    angle: "시연 데이터의 한계를 합성 환경 RL로 넘는 방식이 게임 밖의 GUI 에이전트에도 통하는지, 행동 공간 확장(상대 포인터 이동, 지속 입력)이 왜 필요했는지. 학습 분포 밖 평가(ViZDoom)를 근거로 일반화 주장을 비판적으로 봅니다."
+    sources:
+      - https://arxiv.org/abs/2610.20584
+    proposed_at: 2026-10-24
+    status: approved
+  - id: agent-skills-aaif
+    category: tech
+    title: "Agent Skills 표준, Linux Foundation 산하 AAIF로: MCP에 이은 두 번째 에이전트 표준 기증"
+    why: "Anthropic이 2026-10-22 Agent Skills 표준(이름, GitHub 조직, agentskills.io 도메인)을 Agentic AI Foundation에 기증했습니다. 공식 발표 기준 70개 이상 에이전트 플랫폼이 통합했고, 스킬 100만 개 공개, 설치 약 2.8억 회입니다."
+    angle: "SKILL.md 폴더 구조가 무엇이고 MCP와 어떻게 역할을 나누는지, 벤더 중립 거버넌스가 도입 판단에 주는 의미, 로드맵의 버전 릴리스와 스킬 보안 가이드(설치하는 쪽의 공급망 위험)를 짚습니다."
+    sources:
+      - https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation
+    proposed_at: 2026-10-24
+    priority: high
+    status: approved
+  - id: claude-duet
+    category: tech
+    title: "Claude Duet: 백그라운드에서 일하고 행동 전에 묻는 '능동형 에이전트' 앱"
+    why: "Anthropic이 2026-10-21 Claude Duet 연구 프리뷰를 공개했습니다(미국 Pro·Max 대기자 명단). 같은 시기 다른 회사들도 능동형 에이전트 제품을 내놓아, 챗봇에서 상시 동작 에이전트로 넘어가는 흐름을 보여 주는 사례입니다."
+    angle: "연결된 앱 감시, 아침 브리핑, 행동 전 승인 같은 설계를 공식 발표 기준으로 정리하고, 백그라운드 확인이 사용량 한도를 쓰는 점과 프리뷰의 한계를 앞부분에 표시합니다. 개발자 관점에서는 '사람 승인 루프' 설계 사례로 읽습니다."
+    sources:
+      - https://claude.com/blog/claude-duet
+    proposed_at: 2026-10-24
+    status: approved
+  - id: orca
+    category: opensource
+    title: "Orca: 여러 코딩 에이전트를 워크트리별로 병렬 실행하고 관리하는 작업 공간"
+    why: "GitHub 주간 트렌딩 상위권 저장소로, 2026-10-24 기준 스타 약 10.3만 개, 이번 주 약 9,400개가 늘었습니다(MIT). Claude Code, Codex 등 30개 이상 CLI 에이전트를 git 워크트리 단위로 나란히 돌리는 도구입니다."
+    angle: "블로그의 OpenHands 글과 비교해 '에이전트 자체'가 아니라 '여러 에이전트를 운영하는 작업 공간'이라는 위치를 짚습니다. 워크트리 병렬 실행, SSH 원격 워크트리, 모바일 알림의 실무 효용과 설치 방법(README의 명령만 인용)을 정리합니다."
+    sources:
+      - https://github.com/stablyai/orca
+    proposed_at: 2026-10-24
+    status: approved
+  - id: hyperframes
+    category: opensource
+    title: "HyperFrames: HTML로 쓰고 MP4로 렌더링하는, 에이전트용 영상 제작 프레임워크"
+    why: "HeyGen이 공개한 Apache-2.0 저장소로, 2026-10-24 기준 스타 약 7만 개, 이번 주 약 5,700개가 늘어 GitHub 주간 트렌딩에 올랐습니다. 영상을 HTML 컴포지션으로 정의해 코딩 에이전트가 직접 만들 수 있게 한 점이 특징입니다."
+    angle: "headless Chrome과 FFmpeg로 결정적(deterministic) 렌더링을 하는 구조, GSAP·Lottie·Three.js 어댑터, 에이전트 스킬 제공 방식을 정리합니다. 블로그의 Puppeteer 글과 연결하고, Remotion 같은 기존 코드 기반 영상 도구와의 차이는 확인한 범위에서만 비교합니다."
+    sources:
+      - https://github.com/heygen-com/hyperframes
+    proposed_at: 2026-10-24
+    status: approved
