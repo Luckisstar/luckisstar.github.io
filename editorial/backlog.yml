@@ -45,7 +45,8 @@ items:
       - https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation
     proposed_at: 2026-10-24
     priority: high
-    status: approved
+    status: published
+    post: _posts/tech/2026-10-24-agent-skills-aaif.md
   - id: claude-duet
     category: tech
     title: "Claude Duet: 백그라운드에서 일하고 행동 전에 묻는 '능동형 에이전트' 앱"
