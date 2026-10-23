@@ -1,0 +1,20 @@
+# 글 주제 대기열
+#
+# 상태(status) 흐름:
+#   approved  → 작성 대기. 주제 수집 PR에 들어 있는 항목은 이 상태로 올라오며, PR을 병합하면 승인된 것으로 봅니다.
+#               원하지 않는 항목은 병합 전에 status를 rejected로 바꾸세요(삭제하면 나중에 다시 제안될 수 있음).
+#   rejected  → 쓰지 않음. 같은 주제를 다시 제안하지 않습니다.
+#   published → 글 작성 PR에서 이 상태로 바뀌고 post에 글 경로가 기록됩니다.
+#
+# 필드:
+#   id:          영문 소문자 슬러그(글 파일 이름에도 사용). 대기열 안에서 유일해야 함
+#   category:    papers | tech | opensource
+#   title:       가제(한국어)
+#   why:         지금 이 주제를 다룰 이유(1~2문장)
+#   angle:       글에서 강조할 관점이나 인사이트 방향(선택)
+#   sources:     1차 출처 URL 목록(논문, 저장소, 공식 발표 등)
+#   proposed_at: 제안일(YYYY-MM-DD)
+#   priority:    high | normal (선택, 기본 normal)
+#   post:        게시된 글 경로(published일 때)
+
+items: []
