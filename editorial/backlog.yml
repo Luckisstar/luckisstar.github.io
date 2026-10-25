@@ -373,3 +373,64 @@ items:
     proposed_at: 2026-10-24
     status: published
     post: _posts/tech/2026-10-24-reasoning-models.md
+  - id: verifierbench
+    category: papers
+    title: "VerifierBench: 에이전트가 직접 쓴 검증기는 정답을 얼마나 잘 걸러 내는가"
+    why: "2026-10-18 arXiv(2610.28679), 코드 공개(Apache-2.0). 6개 에이전트 벤치마크에서 뽑은 222개 과제와 숨은 테스트 4,993개로 19개 모델이 쓴 실행 가능한 검증기를 평가했고, 정규화 균형 정확도가 10.6~62.1에 그쳤다고 보고합니다."
+    angle: "생성된 검증기가 오답 거부보다 정답 수용에서 더 자주 실패하는(과도하게 엄격한) 문제와, 자기 테스트가 같은 잘못된 가정을 공유해 오류를 못 잡는 이유를 정리합니다. 블로그의 Harness² 글(검증기 없는 하네스 개선)과 대비하고, 합성 학습 데이터 필터링에 검증기를 쓰는 팀이 점검할 항목을 뽑습니다."
+    sources:
+      - https://arxiv.org/abs/2610.28679
+      - https://github.com/DwanZhang-AI/verifier-suite
+    proposed_at: 2026-10-26
+    status: approved
+  - id: agent4sci
+    category: papers
+    title: "Agent4Sci: 코딩 에이전트는 과학용 ML 모델의 최고 기록을 넘을 수 있는가"
+    why: "2026-10-19 arXiv(2610.28763), 코드 공개(Apache-2.0). 11개 분야 20개 벤치마크에서 프런티어 에이전트가 모든 벤치마크의 기존 최고 기록을 넘었지만, 개선이 대부분 ML 엔지니어링 기법에서 나왔고 연구 수준 통찰은 부족했다고 보고합니다."
+    angle: "새로움 오판, 자원 미활용, 국소적 튜닝으로의 수렴이라는 세 가지 한계와, 아이디어 발상·실험 관리·체크리스트 스킬을 붙이자 평균 상대 개선이 10.4%에서 20.1%로 오른 결과를 짚습니다. 블로그의 Agent Skills 글과 연결해 '스킬로 에이전트 습관을 고치는' 실무 설계로 읽고, 수치는 원문 표로 다시 확인합니다."
+    sources:
+      - https://arxiv.org/abs/2610.28763
+      - https://github.com/maszhongming/agent4sci
+    proposed_at: 2026-10-26
+    status: approved
+  - id: anthropic-formal-verification
+    category: tech
+    title: "LLM이 쓴 증명으로 오픈소스 123개 라이브러리의 '크래시 없음'을 검증하다"
+    why: "Anthropic이 2026-10-22 공개한 연구로, Claude가 OSS-Fuzz 대상 123개 라이브러리 239개 진입점에 대해 RISC-V 바이너리 수준의 크래시 없음 성질을 Rocq로 증명했고(총 약 1.8억 줄), 그 과정에서 퍼징이 놓친 버그도 찾았다고 밝혔습니다. 증명 일부와 스킬이 공개되었습니다."
+    angle: "형식 검증이 무엇을 보장하고 무엇을 보장하지 않는지(신뢰 기반: 프로세서·OS 모델, 정리 문장, 증명 검사기)를 앞에 두고, 퍼징·정적 분석과의 역할 차이, 증명 비용(토큰)과 실무 도입 가능성을 정리합니다. '검증됨 = 버그 없음'이 아니라는 저자 단서를 그대로 인용합니다."
+    sources:
+      - https://www.anthropic.com/research/formal-verification
+      - https://github.com/theorem-labs/oss-verify
+    proposed_at: 2026-10-26
+    priority: high
+    status: approved
+  - id: cohere-rerank-5
+    category: tech
+    title: "Cohere Rerank 5: 재정렬과 핵심 구절 추출(Context Focus)을 한 번의 호출로"
+    why: "Cohere가 2026-10-21 Rerank 5(Pro, Fast)를 정식 출시했습니다. 공식 발표 기준 BRIGHT 82.2점, 보정된 관련성 점수, 문서 속 핵심 구간 점수를 함께 돌려주는 Context Focus를 제공하며, 한국어가 6개 우선 언어에 포함되어 Pro 91.8점을 보고합니다."
+    angle: "RAG 파이프라인에서 리랭커가 맡는 역할과, 문서 단위가 아닌 구간 단위 점수로 LLM에 넣는 컨텍스트를 줄이는 방식(절반 제거 시 답변 품질 96% 유지 주장)을 정리합니다. 블로그의 RAG, 컨텍스트 엔지니어링 글과 연결하고, 벤치마크는 회사 자체 발표라는 점과 가격(기준일 표기)을 명시합니다."
+    sources:
+      - https://cohere.com/blog/rerank-5
+      - https://docs.cohere.com/docs/rerank-overview
+    proposed_at: 2026-10-26
+    status: approved
+  - id: cloudflare-security-audit-skill
+    category: opensource
+    title: "Cloudflare security-audit-skill: 코딩 에이전트를 다단계 보안 감사관으로 만드는 스킬"
+    why: "GitHub 주간 트렌딩 1위 저장소로, 2026-10-26 기준 스타 약 4.7만 개, 이번 주 약 1.27만 개가 늘었습니다(MIT). Cloudflare 내부 취약점 탐색 하네스의 출발점을 공개한 것입니다."
+    angle: "정찰, 커버리지 기반 탐색, 별도 검증 에이전트의 반증, 스키마 검증된 findings.json, 보고서로 이어지는 단계 구조를 공식 블로그와 README로 정리합니다. 샌드박스 없이는 대상 코드를 실행하지 않는다는 제약, 1회 실행이 반복 실행 결과의 약 절반만 찾는다는 README 언급을 앞부분에 둡니다. 블로그의 Agent Skills, LSCBench 글과 연결합니다."
+    sources:
+      - https://github.com/cloudflare/security-audit-skill
+      - https://blog.cloudflare.com/build-your-own-vulnerability-harness/
+    proposed_at: 2026-10-26
+    priority: high
+    status: approved
+  - id: graphify
+    category: opensource
+    title: "Graphify: 코드베이스와 문서를 질의 가능한 지식 그래프로 바꿔 에이전트에게 주는 도구"
+    why: "GitHub 주간 트렌딩 저장소로, 2026-10-26 기준 스타 약 13.5만 개, 이번 주 약 6,900개가 늘었고 2026-10-20~23 사이 0.9.93~0.9.95가 연달아 릴리스되었습니다. Claude Code, Cursor, Codex 등에 /graphify 스킬로 붙습니다."
+    angle: "코드는 tree-sitter로 로컬에서 결정적으로 파싱하고, 문서·PDF만 모델로 처리하며, 간선을 EXTRACTED와 INFERRED로 구분하는 설계를 정리합니다. 벡터 검색 기반 RAG와의 차이, 블로그의 컨텍스트 엔지니어링 글과의 연결, README 벤치마크가 자체 주장이라는 점과 유료 클라우드 제품이 있다는 점을 함께 짚습니다. 라이선스 표기(Apache-2.0, MIT 병기)는 LICENSE 파일로 확인합니다."
+    sources:
+      - https://github.com/Graphify-Labs/graphify
+    proposed_at: 2026-10-26
+    status: approved
