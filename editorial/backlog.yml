@@ -67,7 +67,8 @@ items:
     sources:
       - https://github.com/stablyai/orca
     proposed_at: 2026-10-24
-    status: approved
+    status: published
+    post: _posts/opensource/2026-10-27-orca.md
   - id: hyperframes
     category: opensource
     title: "HyperFrames: HTML로 쓰고 MP4로 렌더링하는, 에이전트용 영상 제작 프레임워크"
