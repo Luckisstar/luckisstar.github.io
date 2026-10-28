@@ -76,7 +76,8 @@ items:
     sources:
       - https://github.com/heygen-com/hyperframes
     proposed_at: 2026-10-24
-    status: approved
+    status: published
+    post: _posts/opensource/2026-10-29-hyperframes.md
   - id: cache-engineering-agents
     category: papers
     title: "Cache Engineering for Agents: 텍스트 대신 KV 캐시를 직접 지우는 에이전트 컨텍스트 관리"
