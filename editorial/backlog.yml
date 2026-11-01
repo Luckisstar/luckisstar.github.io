@@ -374,3 +374,63 @@ items:
     proposed_at: 2026-10-24
     status: published
     post: _posts/tech/2026-10-24-reasoning-models.md
+  - id: reasoning-effort-economics
+    category: papers
+    title: "추론 노력(effort) 수준, 무엇을 골라야 하나: 에이전트에서 '더 오래 생각하기'의 경제학"
+    why: "2026-10-25 arXiv 논문(2610.34491)으로 Hugging Face Daily Papers 업보트 37개(2026-11-02 기준)를 받았고 코드(MIT)가 공개됐습니다. 8개 모델, 4개 벤치마크에서 높은 effort가 낮은 effort로 풀던 문제를 오히려 놓치고, 모두가 푸는 쉬운 문제에서 최고 effort가 최저보다 최대 42배 비싸다고 보고합니다."
+    angle: "effort를 '효과를 사후에도 확인하기 어려운 신용재(credence good)'로 보는 관점, 낮은 effort로 시작해 검증된 실패 뒤에만 올리는 전략의 실무 적용법을 정리합니다. 블로그의 추론 모델·테스트 시간 연산 글, Claude Haiku 5.5 비용 글과 연결하고, 벤치마크 4종만으로 일반화할 수 있는지 비판적으로 봅니다."
+    sources:
+      - https://arxiv.org/abs/2610.34491
+      - https://github.com/KaiserWhoLearns/ReasoningEffortLLM
+    proposed_at: 2026-11-02
+    status: approved
+  - id: memory-tax
+    category: papers
+    title: "Memory Tax: 에이전트 메모리 시스템은 그냥 RAG보다 정말 나은가"
+    why: "2026-10-25 arXiv 논문(2610.34073)으로, A-Mem·MemOS·HippoRAG2 등 11개 메모리 시스템을 LongMemEval 등에서 평가해 상당수가 원본 기록을 그대로 검색하는 단순 RAG보다 못한 경우가 많다고 보고합니다. 재현 코드(MIT)가 공개돼 있습니다."
+    angle: "메모리의 순가치를 '메모리 이득'과 '메모리 세금(정보 재구성 과정에서 증거가 사라지거나 흐려지는 손실)'으로 나누는 분석 틀을 소개합니다. 블로그의 컨텍스트 엔지니어링, Remory, Pack Light CarryOn 글과 연결해 '메모리를 넣기 전에 RAG 기준선부터 재라'는 실무 교훈을 정리합니다."
+    sources:
+      - https://arxiv.org/abs/2610.34073
+      - https://github.com/hexuan21/MemoryTax
+    proposed_at: 2026-11-02
+    status: approved
+  - id: gpt-6-1-terra
+    category: tech
+    title: "GPT-6.1 Terra: 컴퓨터 사용을 앞세운 OpenAI의 중간급 모델과 가격"
+    why: "OpenAI가 2026-10-26 GPT-6.1 Terra를 공개했습니다. 공식 모델 문서 기준 API 이름 gpt-6.1-terra, 입력 100만 토큰당 1달러(캐시 0.05달러)·출력 5달러, 컨텍스트 105만 토큰, 최대 출력 12.8만 토큰이며 effort는 none부터 max까지 6단계입니다."
+    angle: "가격·컨텍스트·도구 지원(Responses API 전용 도구 호출, computer use, skills, MCP)을 공식 문서 기준으로 정리하고, 같은 주에 나온 effort 경제학 논문과 엮어 '중간급 모델 + effort 조절'로 비용을 설계하는 법을 다룹니다. 공식 발표 페이지는 자동 요청에 403을 반환하므로 작성 시 본문 수치는 공식 문서와 발표문을 직접 열어 확인합니다."
+    sources:
+      - https://openai.com/index/introducing-gpt-6-1-terra
+      - https://developers.openai.com/api/docs/models/gpt-6.1-terra
+    proposed_at: 2026-11-02
+    priority: high
+    status: approved
+  - id: liquid-lfm3
+    category: tech
+    title: "LFM3: 2B 안팎 하나의 뼈대에서 갈라진 텍스트·비전·음성·옴니 온디바이스 모델"
+    why: "Liquid AI가 2026-10-27 LFM3 제품군(LFM3-1.7B, VL-2B, Audio-2B, Omni-2B, d1-2B 등)을 공개했습니다. 텍스트 모델은 4비트에서 약 1GB에 들어가고, 모든 모델을 GPU 한 장으로 미세조정할 수 있다고 밝혔습니다."
+    angle: "짧은 합성곱과 슬라이딩 윈도·전역 어텐션을 섞은 하이브리드 구조, 하나의 베이스에서 모달리티별 모델을 갈라내는 방식, 온디바이스 배포 경로(llama.cpp 등)를 정리합니다. 라이선스가 OSI 오픈소스가 아닌 'lfm1.0'(Hugging Face 메타데이터 기준)이라는 점을 앞부분에 표시하고, 블로그의 양자화 글과 연결합니다."
+    sources:
+      - https://huggingface.co/blog/LiquidAI/lfm3
+      - https://www.liquid.ai/blog/lfm3
+      - https://huggingface.co/LiquidAI/LFM3-1.7B
+    proposed_at: 2026-11-02
+    status: approved
+  - id: deepinfer
+    category: opensource
+    title: "DeepInfer: DeepSeek가 공개한 자사 모델 전용 대규모 추론 프레임워크"
+    why: "deepseek-ai가 2026-10-16 만든 Apache-2.0 저장소로, 2026-11-02 기준 스타 약 2.5만 개입니다. README는 DeepSeek 프로덕션 서비스를 구동하는 프레임워크라고 소개하며, 이번 공개는 오프라인 추론만 포함합니다."
+    angle: "attention DP, MoE EP와 EPLB, 드래프트 토큰 기반 디코딩 가속, 배치 불변(batch-invariant) 추론 같은 기능을 블로그의 KV 캐시·추측 디코딩 글, DeepSeek-V4.1-Flash 글과 연결해 설명합니다. 지원 모델이 DeepSeek-V4.1-Flash 하나, 하드웨어가 NVIDIA SM100·Ascend 950뿐이고 KV 캐시 시스템과 PD 분리가 빠졌다는 한계를 분명히 적고, vLLM 기반이라는 점에서 vLLM·SGLang과의 관계를 짚습니다."
+    sources:
+      - https://github.com/deepseek-ai/DeepInfer
+    proposed_at: 2026-11-02
+    status: approved
+  - id: jetbrains-thinkrail
+    category: opensource
+    title: "ThinkRail: JetBrains 인큐베이터의 오픈소스 에이전트 IDE"
+    why: "JetBrains가 공개한 Apache-2.0 저장소로, GitHub 주간 트렌딩 기준 2026-11-02 스타 약 7,000개, 이번 주 약 5,700개가 늘었습니다. pi 코딩 에이전트를 내장해 워크트리별 작업 공간, 스펙 파일(SPEC.md) 그래프, Agent Skills, MCP를 한 앱에서 다룹니다."
+    angle: "블로그의 Orca 글(여러 CLI 에이전트를 운영하는 작업 공간)과 비교해 '에이전트를 품은 IDE'라는 위치를 짚고, 스펙 파일을 에이전트가 함께 유지하는 방식이 AGENTS.md와 어떻게 다른지 정리합니다. 버전 0.1대 인큐베이터 프로젝트라는 성숙도와 PostHog 사용 통계 전송(옵트아웃 방법)을 앞부분에 표시합니다."
+    sources:
+      - https://github.com/JetBrains/thinkrail
+    proposed_at: 2026-11-02
+    status: approved
