@@ -374,3 +374,64 @@ items:
     proposed_at: 2026-10-24
     status: published
     post: _posts/tech/2026-10-24-reasoning-models.md
+  - id: wikitrace-evidence-linked-memory
+    category: papers
+    title: "WikiTrace: 에이전트 메모리의 교훈에 '근거 궤적'을 연결해 잘못된 기억을 스스로 고치게 하기"
+    why: "2026-11-10 arXiv에 올라온 KAIST 계열 연구진(Sung Ju Hwang 등)의 논문(2611.14320)으로, Hugging Face Daily Papers에서 업보트 66개(2026-11-16 기준)를 받았습니다. 메모리가 오히려 성능을 깎는 '메모리 유발 성능 저하'를 정의하고 5개 에이전트 벤치마크에서 기존 메모리 방식보다 낫다고 보고합니다. 코드 공개(Apache-2.0)."
+    angle: "교훈만 저장하는 기존 메모리와 달리 교훈, 성공·실패 이유 요약, 원본 궤적을 링크로 묶고 에이전트가 터미널 도구로 따라가 검증하는 구조를 설명합니다. 블로그의 Remory, Memory Tax(제안 중) 주제와 연결하고, 궤적 저장 비용과 링크 추적에 드는 토큰 비용은 원문 수치로 확인해 한계로 짚습니다."
+    sources:
+      - https://arxiv.org/abs/2611.14320
+      - https://github.com/yukyeongleee/wikitrace
+    proposed_at: 2026-11-16
+    status: approved
+  - id: infrathon
+    category: papers
+    title: "Infrathon: 24시간짜리 AI 인프라 최적화 과제로 에이전트를 재면 순위가 바뀐다"
+    why: "2026-11-09 arXiv 논문(2611.11995)으로, 6개 모델을 24시간 예산으로 150회 실행(1만 GPU시간 이상)한 장기 과제 벤치마크입니다. 평가 시간에 따라 모델 순위가 달라지고, 150회 중 135회가 후반 12시간에도 개선을 냈다고 보고합니다."
+    angle: "짧은 벤치마크가 놓치는 '긴 시간 동안 계속 개선하는 능력'을 어떻게 재는지, 사람이 설계한 기준선을 넘은 사례(KV 캐시 압축률)와 궤적 분석에서 드러난 과제 규칙 위반을 정리합니다. 블로그의 SWE-bench, LLM evals 글과 연결합니다. 저장소가 PolyForm Noncommercial(비상업) 라이선스이고 일부 데이터는 승인제라는 점을 앞부분에 표시합니다."
+    sources:
+      - https://arxiv.org/abs/2611.11995
+      - https://github.com/InfrathonX/Infrathon
+    proposed_at: 2026-11-16
+    status: approved
+  - id: claude-fable-mythos-5-2
+    category: tech
+    title: "Claude Fable 5.2와 Mythos 5.2: 같은 모델을 안전장치 유무로 나눠 배포하는 방식"
+    why: "Anthropic이 2026-11-09 발표(11-11 수정)했습니다. Fable 5.2는 모든 플랫폼에 공개(입력 100만 토큰당 8달러, 출력 40달러), Mythos 5.2는 검증 프로그램을 거친 조직에만 제공되며, 5.1 대비 출력이 최대 30% 빠르다고 밝혔습니다."
+    angle: "같은 기반 모델을 분류기(사이버·생물 차단, 차단 시 다른 모델로 응답)로 나눠 배포하는 구조와 개발자에게 미치는 영향(차단 빈도 감소 수치, 30일 보관 정책, preserved thinking)을 공식 발표와 시스템 카드로 정리합니다. 벤치마크는 자체 보고 수치임을 표시하고, 블로그의 Claude Haiku 5.5 글과 비용 관점으로 연결합니다."
+    sources:
+      - https://www.anthropic.com/claude-fable-and-mythos-5-2
+      - https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card
+      - https://platform.claude.com/docs/en/models/overview
+    proposed_at: 2026-11-16
+    priority: high
+    status: approved
+  - id: gemini-4-hydrogen
+    category: tech
+    title: "Gemini 4 Hydrogen: 일상 코딩과 에이전트 작업용 '빠른 실행' 모델과 Argon·Carbon 역할 분담"
+    why: "Google이 2026-11-12 공개했습니다. 입력 100만 토큰당 1.5달러, 출력 7.5달러(컨텍스트 전 구간 동일), 입력·출력 각각 최대 100만 토큰이며, 새 xhigh 사고 수준을 추가했습니다. GeekNews에서도 화제가 됐습니다."
+    angle: "블로그의 Gemini 4 Argon 글의 후속으로, 장기 추론용 Carbon·Argon과 빠른 실행용 Hydrogen을 섞어 쓰는 오케스트레이션(Terminal-Bench에서 쿼터 24% 절감 주장)이 실무 비용 설계에 주는 의미를 짚습니다. 벤치마크는 Google 자체 발표 기준임을 표시하고, 모델 ID와 가격은 Gemini API 문서로 다시 확인합니다."
+    sources:
+      - https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/
+      - https://ai.google.dev/gemini-api/docs/models
+    proposed_at: 2026-11-16
+    status: approved
+  - id: aws-emulator
+    category: opensource
+    title: "AWS Emulator: AWS가 직접 내놓은 로컬 AWS API 에뮬레이터"
+    why: "aws GitHub 조직에 공개된 CC0-1.0 저장소로, 2026-11-16 기준 스타 약 8,400개이며 GeekNews 상위권(46점)에 올랐습니다. 서버, 컨테이너, Rust 임베디드 모드로 로컬과 CI에서 AWS 호출 없이 테스트할 수 있게 합니다."
+    angle: "블로그의 LocalStack 글과 직접 비교할 수 있는 주제입니다. 서비스별 크레이트 구조, 릴리스마다 공개한다는 충실도(fidelity) 점수, 에이전트 스킬 설치 방식을 README 기준으로 정리하고, 텔레메트리 기본 활성화와 PR을 받지 않는 운영 방식을 앞부분에 표시합니다. LocalStack 쪽 비교 내용은 공식 자료로 확인한 범위에서만 씁니다."
+    sources:
+      - https://github.com/aws/aws-emulator
+    proposed_at: 2026-11-16
+    priority: high
+    status: approved
+  - id: elephant-goldfish-model
+    category: opensource
+    title: "Elephant Goldfish Model: 맥락을 아는 '코끼리'가 설계하고 맥락 없는 '금붕어'가 검토하는 에이전트 플러그인"
+    why: "google 조직의 Apache-2.0 저장소로, 2026-11-16 기준 스타 약 1.97만 개, 이번 주 약 5,500개가 늘어 GitHub 주간 트렌딩에 올랐습니다(README에 Google 공식 지원 제품이 아니라고 명시). Claude Code, Codex CLI, Antigravity에 플러그인으로 설치합니다."
+    angle: "긴 대화 맥락을 가진 에이전트가 쓴 설계 문서를 새 서브에이전트 컨텍스트로 검토하게 하는 '맥락 분리 리뷰'가 왜 효과적인지, 5단계 설계 리뷰와 문서-코드 드리프트 리포트 기능을 정리합니다. 블로그의 컨텍스트 엔지니어링, Agent Skills 글과 연결합니다."
+    sources:
+      - https://github.com/google/elephant-goldfish-model
+    proposed_at: 2026-11-16
+    status: approved
