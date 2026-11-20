@@ -77,7 +77,8 @@ items:
     sources:
       - https://github.com/heygen-com/hyperframes
     proposed_at: 2026-10-24
-    status: approved
+    status: published
+    post: _posts/opensource/2026-10-29-hyperframes.md
   - id: cache-engineering-agents
     category: papers
     title: "Cache Engineering for Agents: 텍스트 대신 KV 캐시를 직접 지우는 에이전트 컨텍스트 관리"
@@ -374,6 +375,188 @@ items:
     proposed_at: 2026-10-24
     status: published
     post: _posts/tech/2026-10-24-reasoning-models.md
+  - id: verifierbench
+    category: papers
+    title: "VerifierBench: 에이전트가 직접 쓴 검증기는 정답을 얼마나 잘 걸러 내는가"
+    why: "2026-10-18 arXiv(2610.28679), 코드 공개(Apache-2.0). 6개 에이전트 벤치마크에서 뽑은 222개 과제와 숨은 테스트 4,993개로 19개 모델이 쓴 실행 가능한 검증기를 평가했고, 정규화 균형 정확도가 10.6~62.1에 그쳤다고 보고합니다."
+    angle: "생성된 검증기가 오답 거부보다 정답 수용에서 더 자주 실패하는(과도하게 엄격한) 문제와, 자기 테스트가 같은 잘못된 가정을 공유해 오류를 못 잡는 이유를 정리합니다. 블로그의 Harness² 글(검증기 없는 하네스 개선)과 대비하고, 합성 학습 데이터 필터링에 검증기를 쓰는 팀이 점검할 항목을 뽑습니다."
+    sources:
+      - https://arxiv.org/abs/2610.28679
+      - https://github.com/DwanZhang-AI/verifier-suite
+    proposed_at: 2026-10-26
+    status: approved
+  - id: agent4sci
+    category: papers
+    title: "Agent4Sci: 코딩 에이전트는 과학용 ML 모델의 최고 기록을 넘을 수 있는가"
+    why: "2026-10-19 arXiv(2610.28763), 코드 공개(Apache-2.0). 11개 분야 20개 벤치마크에서 프런티어 에이전트가 모든 벤치마크의 기존 최고 기록을 넘었지만, 개선이 대부분 ML 엔지니어링 기법에서 나왔고 연구 수준 통찰은 부족했다고 보고합니다."
+    angle: "새로움 오판, 자원 미활용, 국소적 튜닝으로의 수렴이라는 세 가지 한계와, 아이디어 발상·실험 관리·체크리스트 스킬을 붙이자 평균 상대 개선이 10.4%에서 20.1%로 오른 결과를 짚습니다. 블로그의 Agent Skills 글과 연결해 '스킬로 에이전트 습관을 고치는' 실무 설계로 읽고, 수치는 원문 표로 다시 확인합니다."
+    sources:
+      - https://arxiv.org/abs/2610.28763
+      - https://github.com/maszhongming/agent4sci
+    proposed_at: 2026-10-26
+    status: approved
+  - id: anthropic-formal-verification
+    category: tech
+    title: "LLM이 쓴 증명으로 오픈소스 123개 라이브러리의 '크래시 없음'을 검증하다"
+    why: "Anthropic이 2026-10-22 공개한 연구로, Claude가 OSS-Fuzz 대상 123개 라이브러리 239개 진입점에 대해 RISC-V 바이너리 수준의 크래시 없음 성질을 Rocq로 증명했고(총 약 1.8억 줄), 그 과정에서 퍼징이 놓친 버그도 찾았다고 밝혔습니다. 증명 일부와 스킬이 공개되었습니다."
+    angle: "형식 검증이 무엇을 보장하고 무엇을 보장하지 않는지(신뢰 기반: 프로세서·OS 모델, 정리 문장, 증명 검사기)를 앞에 두고, 퍼징·정적 분석과의 역할 차이, 증명 비용(토큰)과 실무 도입 가능성을 정리합니다. '검증됨 = 버그 없음'이 아니라는 저자 단서를 그대로 인용합니다."
+    sources:
+      - https://www.anthropic.com/research/formal-verification
+      - https://github.com/theorem-labs/oss-verify
+    proposed_at: 2026-10-26
+    priority: high
+    status: approved
+  - id: cohere-rerank-5
+    category: tech
+    title: "Cohere Rerank 5: 재정렬과 핵심 구절 추출(Context Focus)을 한 번의 호출로"
+    why: "Cohere가 2026-10-21 Rerank 5(Pro, Fast)를 정식 출시했습니다. 공식 발표 기준 BRIGHT 82.2점, 보정된 관련성 점수, 문서 속 핵심 구간 점수를 함께 돌려주는 Context Focus를 제공하며, 한국어가 6개 우선 언어에 포함되어 Pro 91.8점을 보고합니다."
+    angle: "RAG 파이프라인에서 리랭커가 맡는 역할과, 문서 단위가 아닌 구간 단위 점수로 LLM에 넣는 컨텍스트를 줄이는 방식(절반 제거 시 답변 품질 96% 유지 주장)을 정리합니다. 블로그의 RAG, 컨텍스트 엔지니어링 글과 연결하고, 벤치마크는 회사 자체 발표라는 점과 가격(기준일 표기)을 명시합니다."
+    sources:
+      - https://cohere.com/blog/rerank-5
+      - https://docs.cohere.com/docs/rerank-overview
+    proposed_at: 2026-10-26
+    status: approved
+  - id: cloudflare-security-audit-skill
+    category: opensource
+    title: "Cloudflare security-audit-skill: 코딩 에이전트를 다단계 보안 감사관으로 만드는 스킬"
+    why: "GitHub 주간 트렌딩 1위 저장소로, 2026-10-26 기준 스타 약 4.7만 개, 이번 주 약 1.27만 개가 늘었습니다(MIT). Cloudflare 내부 취약점 탐색 하네스의 출발점을 공개한 것입니다."
+    angle: "정찰, 커버리지 기반 탐색, 별도 검증 에이전트의 반증, 스키마 검증된 findings.json, 보고서로 이어지는 단계 구조를 공식 블로그와 README로 정리합니다. 샌드박스 없이는 대상 코드를 실행하지 않는다는 제약, 1회 실행이 반복 실행 결과의 약 절반만 찾는다는 README 언급을 앞부분에 둡니다. 블로그의 Agent Skills, LSCBench 글과 연결합니다."
+    sources:
+      - https://github.com/cloudflare/security-audit-skill
+      - https://blog.cloudflare.com/build-your-own-vulnerability-harness/
+    proposed_at: 2026-10-26
+    priority: high
+    status: approved
+  - id: graphify
+    category: opensource
+    title: "Graphify: 코드베이스와 문서를 질의 가능한 지식 그래프로 바꿔 에이전트에게 주는 도구"
+    why: "GitHub 주간 트렌딩 저장소로, 2026-10-26 기준 스타 약 13.5만 개, 이번 주 약 6,900개가 늘었고 2026-10-20~23 사이 0.9.93~0.9.95가 연달아 릴리스되었습니다. Claude Code, Cursor, Codex 등에 /graphify 스킬로 붙습니다."
+    angle: "코드는 tree-sitter로 로컬에서 결정적으로 파싱하고, 문서·PDF만 모델로 처리하며, 간선을 EXTRACTED와 INFERRED로 구분하는 설계를 정리합니다. 벡터 검색 기반 RAG와의 차이, 블로그의 컨텍스트 엔지니어링 글과의 연결, README 벤치마크가 자체 주장이라는 점과 유료 클라우드 제품이 있다는 점을 함께 짚습니다. 라이선스 표기(Apache-2.0, MIT 병기)는 LICENSE 파일로 확인합니다."
+    sources:
+      - https://github.com/Graphify-Labs/graphify
+    proposed_at: 2026-10-26
+    status: approved
+  - id: reasoning-effort-economics
+    category: papers
+    title: "추론 노력(effort) 수준, 무엇을 골라야 하나: 에이전트에서 '더 오래 생각하기'의 경제학"
+    why: "2026-10-25 arXiv 논문(2610.34491)으로 Hugging Face Daily Papers 업보트 37개(2026-11-02 기준)를 받았고 코드(MIT)가 공개됐습니다. 8개 모델, 4개 벤치마크에서 높은 effort가 낮은 effort로 풀던 문제를 오히려 놓치고, 모두가 푸는 쉬운 문제에서 최고 effort가 최저보다 최대 42배 비싸다고 보고합니다."
+    angle: "effort를 '효과를 사후에도 확인하기 어려운 신용재(credence good)'로 보는 관점, 낮은 effort로 시작해 검증된 실패 뒤에만 올리는 전략의 실무 적용법을 정리합니다. 블로그의 추론 모델·테스트 시간 연산 글, Claude Haiku 5.5 비용 글과 연결하고, 벤치마크 4종만으로 일반화할 수 있는지 비판적으로 봅니다."
+    sources:
+      - https://arxiv.org/abs/2610.34491
+      - https://github.com/KaiserWhoLearns/ReasoningEffortLLM
+    proposed_at: 2026-11-02
+    status: approved
+  - id: memory-tax
+    category: papers
+    title: "Memory Tax: 에이전트 메모리 시스템은 그냥 RAG보다 정말 나은가"
+    why: "2026-10-25 arXiv 논문(2610.34073)으로, A-Mem·MemOS·HippoRAG2 등 11개 메모리 시스템을 LongMemEval 등에서 평가해 상당수가 원본 기록을 그대로 검색하는 단순 RAG보다 못한 경우가 많다고 보고합니다. 재현 코드(MIT)가 공개돼 있습니다."
+    angle: "메모리의 순가치를 '메모리 이득'과 '메모리 세금(정보 재구성 과정에서 증거가 사라지거나 흐려지는 손실)'으로 나누는 분석 틀을 소개합니다. 블로그의 컨텍스트 엔지니어링, Remory, Pack Light CarryOn 글과 연결해 '메모리를 넣기 전에 RAG 기준선부터 재라'는 실무 교훈을 정리합니다."
+    sources:
+      - https://arxiv.org/abs/2610.34073
+      - https://github.com/hexuan21/MemoryTax
+    proposed_at: 2026-11-02
+    status: approved
+  - id: gpt-6-1-terra
+    category: tech
+    title: "GPT-6.1 Terra: 컴퓨터 사용을 앞세운 OpenAI의 중간급 모델과 가격"
+    why: "OpenAI가 2026-10-26 GPT-6.1 Terra를 공개했습니다. 공식 모델 문서 기준 API 이름 gpt-6.1-terra, 입력 100만 토큰당 1달러(캐시 0.05달러)·출력 5달러, 컨텍스트 105만 토큰, 최대 출력 12.8만 토큰이며 effort는 none부터 max까지 6단계입니다."
+    angle: "가격·컨텍스트·도구 지원(Responses API 전용 도구 호출, computer use, skills, MCP)을 공식 문서 기준으로 정리하고, 같은 주에 나온 effort 경제학 논문과 엮어 '중간급 모델 + effort 조절'로 비용을 설계하는 법을 다룹니다. 공식 발표 페이지는 자동 요청에 403을 반환하므로 작성 시 본문 수치는 공식 문서와 발표문을 직접 열어 확인합니다."
+    sources:
+      - https://openai.com/index/introducing-gpt-6-1-terra
+      - https://developers.openai.com/api/docs/models/gpt-6.1-terra
+    proposed_at: 2026-11-02
+    priority: high
+    status: approved
+  - id: liquid-lfm3
+    category: tech
+    title: "LFM3: 2B 안팎 하나의 뼈대에서 갈라진 텍스트·비전·음성·옴니 온디바이스 모델"
+    why: "Liquid AI가 2026-10-27 LFM3 제품군(LFM3-1.7B, VL-2B, Audio-2B, Omni-2B, d1-2B 등)을 공개했습니다. 텍스트 모델은 4비트에서 약 1GB에 들어가고, 모든 모델을 GPU 한 장으로 미세조정할 수 있다고 밝혔습니다."
+    angle: "짧은 합성곱과 슬라이딩 윈도·전역 어텐션을 섞은 하이브리드 구조, 하나의 베이스에서 모달리티별 모델을 갈라내는 방식, 온디바이스 배포 경로(llama.cpp 등)를 정리합니다. 라이선스가 OSI 오픈소스가 아닌 'lfm1.0'(Hugging Face 메타데이터 기준)이라는 점을 앞부분에 표시하고, 블로그의 양자화 글과 연결합니다."
+    sources:
+      - https://huggingface.co/blog/LiquidAI/lfm3
+      - https://www.liquid.ai/blog/lfm3
+      - https://huggingface.co/LiquidAI/LFM3-1.7B
+    proposed_at: 2026-11-02
+    status: approved
+  - id: deepinfer
+    category: opensource
+    title: "DeepInfer: DeepSeek가 공개한 자사 모델 전용 대규모 추론 프레임워크"
+    why: "deepseek-ai가 2026-10-16 만든 Apache-2.0 저장소로, 2026-11-02 기준 스타 약 2.5만 개입니다. README는 DeepSeek 프로덕션 서비스를 구동하는 프레임워크라고 소개하며, 이번 공개는 오프라인 추론만 포함합니다."
+    angle: "attention DP, MoE EP와 EPLB, 드래프트 토큰 기반 디코딩 가속, 배치 불변(batch-invariant) 추론 같은 기능을 블로그의 KV 캐시·추측 디코딩 글, DeepSeek-V4.1-Flash 글과 연결해 설명합니다. 지원 모델이 DeepSeek-V4.1-Flash 하나, 하드웨어가 NVIDIA SM100·Ascend 950뿐이고 KV 캐시 시스템과 PD 분리가 빠졌다는 한계를 분명히 적고, vLLM 기반이라는 점에서 vLLM·SGLang과의 관계를 짚습니다."
+    sources:
+      - https://github.com/deepseek-ai/DeepInfer
+    proposed_at: 2026-11-02
+    status: approved
+  - id: jetbrains-thinkrail
+    category: opensource
+    title: "ThinkRail: JetBrains 인큐베이터의 오픈소스 에이전트 IDE"
+    why: "JetBrains가 공개한 Apache-2.0 저장소로, GitHub 주간 트렌딩 기준 2026-11-02 스타 약 7,000개, 이번 주 약 5,700개가 늘었습니다. pi 코딩 에이전트를 내장해 워크트리별 작업 공간, 스펙 파일(SPEC.md) 그래프, Agent Skills, MCP를 한 앱에서 다룹니다."
+    angle: "블로그의 Orca 글(여러 CLI 에이전트를 운영하는 작업 공간)과 비교해 '에이전트를 품은 IDE'라는 위치를 짚고, 스펙 파일을 에이전트가 함께 유지하는 방식이 AGENTS.md와 어떻게 다른지 정리합니다. 버전 0.1대 인큐베이터 프로젝트라는 성숙도와 PostHog 사용 통계 전송(옵트아웃 방법)을 앞부분에 표시합니다."
+    sources:
+      - https://github.com/JetBrains/thinkrail
+    proposed_at: 2026-11-02
+    status: approved
+  - id: you-dont-need-long-context
+    category: papers
+    title: "You don't need long context: 잦은 컴팩션만으로 긴 작업을 짧은 컨텍스트에서 풀 수 있는가"
+    why: "Peter Belcak, Pavlo Molchanov 등이 2026-11-03 arXiv에 공개한 논문으로, Hugging Face Daily Papers에서 업보트 19개(2026-11-09 기준)를 받았습니다. 뒤쪽 토큰 생성 비용이 앞쪽보다 최대 7배 비싸다는 측정과 함께 '긴 컨텍스트 모델이 꼭 필요한가'를 정면으로 묻습니다."
+    angle: "블로그의 컨텍스트 엔지니어링, Remory, Cache Engineering, Pack Light CarryOn 글과 묶어 '컨텍스트를 짧게 유지하는' 접근들의 계보를 정리합니다. 한 컨텍스트에 행동 하나만 두는 SWE 실험과 SSSM(의미 상태 공간 모델) 개념이 실제 하네스 설계에 주는 의미를 보고, 코드가 공개되지 않은 점과 '정확도 손실이 거의 없다'는 주장의 범위를 원문 표로 확인합니다."
+    sources:
+      - https://arxiv.org/abs/2611.05306
+    proposed_at: 2026-11-09
+    status: approved
+  - id: hybrid-computer-use
+    category: papers
+    title: "Hybrid Computer Use: 스크린샷 대신 코드·접근성 트리·GUI를 골라 쓰는 컴퓨터 사용 에이전트 인터페이스"
+    why: "Microsoft Research 등이 2026-10-30 arXiv에 공개했고, 같은 내용을 MIT 라이선스 MCP 서버(computer-use)로 함께 공개했습니다. 논문은 OSWorld 2.0에서 비교 시스템 중 가장 높은 Partial·Binary 점수를 보고합니다."
+    angle: "스크린샷과 마우스 중심 인터페이스가 왜 비효율적인지, 접근성(AX) 트리를 짧은 참조와 diff로 돌려주는 설계, 채널 전환 시 오래된 상태(stale state) 방지를 정리합니다. 블로그의 Player-1 글(GUI 행동 공간 확장)과 대비하고, Claude Code·Codex에 MCP로 붙이는 방법은 README 명령만 인용합니다. 정확한 점수는 원문 표로 확인합니다."
+    sources:
+      - https://arxiv.org/abs/2610.41432
+      - https://github.com/microsoft/Hybrid-Computer-Use
+    proposed_at: 2026-11-09
+    status: approved
+  - id: kimi-k3-1-pro
+    category: tech
+    title: "Kimi K3.1 Pro: 2.8T MoE 오픈웨이트, 그러나 매출·사용자 조건이 붙은 수정 MIT 라이선스"
+    why: "Moonshot AI가 2026-11-02 Hugging Face에 가중치를 올렸습니다(2026-11-09 기준 좋아요 약 1,700개, Hacker News 600점 이상). 모델 카드 기준 총 2.8T, 활성 104B 파라미터, 1M 토큰 컨텍스트입니다."
+    angle: "라이선스가 MIT 형식이지만 연 매출 2,000만 달러 초과 MaaS 사업자의 별도 계약, 월 활성 1억 명 또는 월 매출 2,000만 달러 초과 시 표기 의무가 붙어 OSI 오픈소스가 아니라는 점을 앞부분에 표시합니다. 블로그의 Meta Muse Spark Open 글과 '오픈웨이트 라이선스' 관점에서 비교하고, KDA·Gated DSA 하이브리드 어텐션 구조와 vLLM·SGLang 배포 경로를 모델 카드 기준으로 정리합니다. 벤치마크는 제조사 자체 보고임을 밝힙니다."
+    sources:
+      - https://huggingface.co/moonshotai/Kimi-K3.1-Pro
+      - https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE
+    proposed_at: 2026-11-09
+    priority: high
+    status: approved
+  - id: claude-message-threads
+    category: tech
+    title: "Claude API 메시지 스레드: 대화 기록을 매번 보내지 않는 Messages API 베타"
+    why: "Anthropic이 2026-11-02 릴리스 노트로 Messages API의 메시지 스레드 베타를 발표했습니다. 지금까지 상태 없이(stateless) 매 요청마다 전체 대화를 보내야 했던 Messages API에서 서버가 대화를 잠시 보관하는 첫 공식 기능입니다."
+    angle: "thread 파라미터와 베타 헤더, 5분 만료와 thread_not_found 시 SDK의 전체 재전송 같은 동작을 공식 문서 기준으로 정리합니다. 블로그의 프롬프트 캐싱, 컨텍스트 엔지니어링 글과 연결해 캐싱·컴팩션·컨텍스트 편집과 무엇이 다른지 짚고, ZDR·HIPAA 비대상이라는 제약을 도입 판단 요소로 앞부분에 표시합니다."
+    sources:
+      - https://platform.claude.com/docs/en/build-with-claude/message-threads
+      - https://platform.claude.com/docs/en/release-notes/overview
+    proposed_at: 2026-11-09
+    status: approved
+  - id: libghostty
+    category: opensource
+    title: "libghostty 1.0: Ghostty의 터미널 에뮬레이션 엔진을 안정된 C ABI 라이브러리로"
+    why: "Mitchell Hashimoto가 2026-11-06 libghostty(libghostty-vt) 1.0을 발표했습니다(MIT). 발표 글 기준 JetBrains IDE 터미널이 이미 쓰고 있고, Neovim의 libvterm 대체 PR이 승인됐으며, Hacker News에서 1,000점 이상을 받았습니다."
+    angle: "'터미널 앱'이 아니라 '터미널 기능을 앱에 넣는 라이브러리'라는 위치, semver와 libabigail로 지키는 ABI 호환 약속, WebAssembly를 포함한 플랫폼 범위를 정리합니다. 에이전트 도구들이 터미널을 내장하는 흐름(블로그의 Orca 글 등)과 연결하고, 발표 글의 수치(4코어 서버에서 터미널 1만 개 등)는 출처를 밝혀 인용합니다."
+    sources:
+      - https://mitchellh.com/writing/libghostty-1-0
+      - https://github.com/ghostty-org/ghostty
+    proposed_at: 2026-11-09
+    priority: high
+    status: approved
+  - id: tokeneconomizer
+    category: opensource
+    title: "TokenEconomizer: 같은 저장소에서 반복되는 코딩 에이전트 비용을 학습으로 줄이는 플러그인"
+    why: "UC Berkeley와 Microsoft가 공개한 Apache-2.0 저장소로, 2026-11-09 기준 GitHub 스타 약 5,200개입니다. README 기준 SWE-Bench 277개 과제에서 다섯 가지 에이전트·모델 조합의 평균 비용을 18.4~30.9% 줄였다고 보고합니다(arXiv 2610.22732)."
+    angle: "마이크로 스킬, 도구 가지치기, 실패 루프 개입이라는 세 장치와 '캐시 가격 기준으로 비용을 센다'는 원칙을 정리합니다. 블로그의 프롬프트 캐싱, Claude Haiku 5.5(에이전트 비용) 글과 연결하고, Claude Code·Codex·Copilot CLI 설치는 README 명령만 인용합니다. 연구 저장소라 장기 유지보수 여부와 자체 보고 수치의 한계를 짚습니다."
+    sources:
+      - https://github.com/microsoft/TokenEconomizer
+      - https://arxiv.org/abs/2610.22732
+    proposed_at: 2026-11-09
+    status: approved
   - id: wikitrace-evidence-linked-memory
     category: papers
     title: "WikiTrace: 에이전트 메모리의 교훈에 '근거 궤적'을 연결해 잘못된 기억을 스스로 고치게 하기"
