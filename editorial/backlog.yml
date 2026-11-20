@@ -384,7 +384,8 @@ items:
       - https://arxiv.org/abs/2610.28679
       - https://github.com/DwanZhang-AI/verifier-suite
     proposed_at: 2026-10-26
-    status: approved
+    status: published
+    post: _posts/papers/2026-11-20-verifierbench.md
   - id: agent4sci
     category: papers
     title: "Agent4Sci: 코딩 에이전트는 과학용 ML 모델의 최고 기록을 넘을 수 있는가"
@@ -394,7 +395,8 @@ items:
       - https://arxiv.org/abs/2610.28763
       - https://github.com/maszhongming/agent4sci
     proposed_at: 2026-10-26
-    status: approved
+    status: published
+    post: _posts/papers/2026-11-20-agent4sci.md
   - id: anthropic-formal-verification
     category: tech
     title: "LLM이 쓴 증명으로 오픈소스 123개 라이브러리의 '크래시 없음'을 검증하다"
@@ -405,7 +407,8 @@ items:
       - https://github.com/theorem-labs/oss-verify
     proposed_at: 2026-10-26
     priority: high
-    status: approved
+    status: published
+    post: _posts/tech/2026-11-20-anthropic-formal-verification.md
   - id: cohere-rerank-5
     category: tech
     title: "Cohere Rerank 5: 재정렬과 핵심 구절 추출(Context Focus)을 한 번의 호출로"
@@ -415,7 +418,8 @@ items:
       - https://cohere.com/blog/rerank-5
       - https://docs.cohere.com/docs/rerank-overview
     proposed_at: 2026-10-26
-    status: approved
+    status: published
+    post: _posts/tech/2026-11-20-cohere-rerank-5.md
   - id: cloudflare-security-audit-skill
     category: opensource
     title: "Cloudflare security-audit-skill: 코딩 에이전트를 다단계 보안 감사관으로 만드는 스킬"
@@ -426,7 +430,8 @@ items:
       - https://blog.cloudflare.com/build-your-own-vulnerability-harness/
     proposed_at: 2026-10-26
     priority: high
-    status: approved
+    status: published
+    post: _posts/opensource/2026-11-20-cloudflare-security-audit-skill.md
   - id: graphify
     category: opensource
     title: "Graphify: 코드베이스와 문서를 질의 가능한 지식 그래프로 바꿔 에이전트에게 주는 도구"
@@ -435,7 +440,8 @@ items:
     sources:
       - https://github.com/Graphify-Labs/graphify
     proposed_at: 2026-10-26
-    status: approved
+    status: published
+    post: _posts/opensource/2026-11-20-graphify.md
   - id: reasoning-effort-economics
     category: papers
     title: "추론 노력(effort) 수준, 무엇을 골라야 하나: 에이전트에서 '더 오래 생각하기'의 경제학"
@@ -445,7 +451,8 @@ items:
       - https://arxiv.org/abs/2610.34491
       - https://github.com/KaiserWhoLearns/ReasoningEffortLLM
     proposed_at: 2026-11-02
-    status: approved
+    status: published
+    post: _posts/papers/2026-11-20-reasoning-effort-economics.md
   - id: memory-tax
     category: papers
     title: "Memory Tax: 에이전트 메모리 시스템은 그냥 RAG보다 정말 나은가"
@@ -455,7 +462,8 @@ items:
       - https://arxiv.org/abs/2610.34073
       - https://github.com/hexuan21/MemoryTax
     proposed_at: 2026-11-02
-    status: approved
+    status: published
+    post: _posts/papers/2026-11-20-memory-tax.md
   - id: gpt-6-1-terra
     category: tech
     title: "GPT-6.1 Terra: 컴퓨터 사용을 앞세운 OpenAI의 중간급 모델과 가격"
@@ -466,7 +474,8 @@ items:
       - https://developers.openai.com/api/docs/models/gpt-6.1-terra
     proposed_at: 2026-11-02
     priority: high
-    status: approved
+    status: published
+    post: _posts/tech/2026-11-20-gpt-6-1-terra.md
   - id: liquid-lfm3
     category: tech
     title: "LFM3: 2B 안팎 하나의 뼈대에서 갈라진 텍스트·비전·음성·옴니 온디바이스 모델"
@@ -477,7 +486,8 @@ items:
       - https://www.liquid.ai/blog/lfm3
       - https://huggingface.co/LiquidAI/LFM3-1.7B
     proposed_at: 2026-11-02
-    status: approved
+    status: published
+    post: _posts/tech/2026-11-20-liquid-lfm3.md
   - id: deepinfer
     category: opensource
     title: "DeepInfer: DeepSeek가 공개한 자사 모델 전용 대규모 추론 프레임워크"
@@ -486,7 +496,8 @@ items:
     sources:
       - https://github.com/deepseek-ai/DeepInfer
     proposed_at: 2026-11-02
-    status: approved
+    status: published
+    post: _posts/opensource/2026-11-20-deepinfer.md
   - id: jetbrains-thinkrail
     category: opensource
     title: "ThinkRail: JetBrains 인큐베이터의 오픈소스 에이전트 IDE"
@@ -495,7 +506,8 @@ items:
     sources:
       - https://github.com/JetBrains/thinkrail
     proposed_at: 2026-11-02
-    status: approved
+    status: published
+    post: _posts/opensource/2026-11-20-jetbrains-thinkrail.md
   - id: you-dont-need-long-context
     category: papers
     title: "You don't need long context: 잦은 컴팩션만으로 긴 작업을 짧은 컨텍스트에서 풀 수 있는가"
