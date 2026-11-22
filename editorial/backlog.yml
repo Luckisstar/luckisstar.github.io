@@ -630,3 +630,68 @@ items:
       - https://github.com/google/elephant-goldfish-model
     proposed_at: 2026-11-16
     status: approved
+  - id: embeddings-vs-grep
+    category: papers
+    title: "Embeddings vs. Grep: 코드 검색에서 임베딩의 우위는 어디서 오는가"
+    why: "2026-11-16 arXiv에 올라온 논문(2611.20455)으로, 91개 저장소 기반 벤치마크 Repo-Premium에서 기존 벤치마크의 임베딩 우위가 평가 방식(BM25 청크 분할 등)과 식별자 없는 쿼리에서 온다고 보고합니다. 코딩 에이전트가 grep으로도 잘 동작하는 이유를 실증으로 다룹니다."
+    angle: "LLM이 식별자를 먼저 생성한 뒤 grep하는 'generate-then-grep'이 BM25를 얼마나 끌어올리는지, 세 가지 실무 지침(공정한 어휘 기준선, BM25 융합, 쿼리 확장)이 사내 코드 검색과 에이전트 도구 설계에 주는 의미. Graphify, RAG 글과 연결합니다."
+    sources:
+      - https://arxiv.org/abs/2611.20455
+    proposed_at: 2026-11-23
+    status: approved
+  - id: resolution-hypothesis
+    category: papers
+    title: "The Resolution Hypothesis: 에이전트 자기 개선이 멈추는 이유는 '더 나은 것을 못 알아봐서'다"
+    why: "2026-11-17 arXiv에 올라온 논문(2611.23068)으로, 7개 진화 방법과 6개 모델(LLM 호출 1,000만 회 이상)에서 후보 선택이 무작위와 다르지 않고, 논문 간 몇 %p 차이가 같은 방법의 재실행 편차보다 작다고 보고합니다."
+    angle: "프롬프트·스킬·메모리를 자동 개선하는 루프에서 병목이 제안이 아니라 평가 노이즈라는 주장. Harness², VerifierBench, LLM 평가 실무 글과 연결해, 실무에서 반복 실행 수와 유의성 검정을 어떻게 잡아야 하는지 정리합니다."
+    sources:
+      - https://arxiv.org/abs/2611.23068
+    proposed_at: 2026-11-23
+    status: approved
+  - id: inkling-2-mini
+    category: tech
+    title: "Inkling 2 Mini: 노트북에서 돌리는 26B MoE 코딩 모델과 '루프 트랜스포머' 구조"
+    why: "Thinking Machines Lab이 2026-11-20 공개한 오픈웨이트 모델로, 총 26.4B·토큰당 활성 3.4B, NVFP4 학습·배포로 약 20GB에 들어갑니다. Hugging Face 라이선스는 apache-2.0(2026-11-23 기준)이며 HN 1,400점 이상으로 화제가 됐습니다."
+    angle: "중간 블록을 토큰마다 세 번 반복하는 루프 구조, 전문가 2/3 가지치기 후 증류 복구, NVFP4 배포가 로컬 실행 비용을 어떻게 바꾸는지. 회사가 직접 밝힌 약점(다회차 대화, 복잡한 제약, HLE)도 함께 다루고 MoE, 양자화 글과 연결합니다."
+    sources:
+      - https://thinkingmachines.ai/news/inkling-2-mini/
+      - https://thinkingmachines.ai/model-card/inkling-2-mini/
+      - https://huggingface.co/thinkingmachines/Inkling-2-Mini
+    proposed_at: 2026-11-23
+    priority: high
+    status: approved
+  - id: nginx-http2-rce-2026-11
+    category: tech
+    title: "NGINX HTTP/2 원격 코드 실행 취약점 2건: 영향 버전, 조건, 패치와 임시 조치"
+    why: "2026-11-18 공개된 CVE-2026-123633, CVE-2026-123007(CVSS 4.0 9.2)로, 후자는 HTTP/2를 켠 기본 설정에서도 악용 가능하다고 보고됐습니다. 1.30.7(stable), 1.31.9(mainline)에서 수정되어 국내 서비스 운영자 대부분이 확인해야 합니다."
+    angle: "nginx.org 공식 보안 공지와 발견자(Wiz) 분석을 바탕으로 영향 범위, 리버스 프록시 여부에 따른 차이, 업그레이드가 어려울 때의 http2 off 임시 조치와 그 부작용, 배포판 패키지·인그레스 컨트롤러 점검 순서를 정리합니다. 공격 코드 세부는 다루지 않습니다."
+    sources:
+      - https://nginx.org/en/security_advisories.html
+      - https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities
+      - https://www.cve.org/CVERecord?id=CVE-2026-123007
+      - https://www.cve.org/CVERecord?id=CVE-2026-123633
+    proposed_at: 2026-11-23
+    priority: high
+    status: approved
+  - id: kiri
+    category: opensource
+    title: "Kiri: Docker Desktop 대신 쓰는 Rust 기반 경량 컨테이너 런타임"
+    why: "2026-11-02 생성된 저장소가 약 1.2만 스타(2026-11-23 기준)를 모았습니다. Apache-2.0 라이선스로 macOS, Windows(WSL 2), Linux를 지원하고 기존 docker CLI, Compose, buildx를 그대로 쓴다고 밝힙니다."
+    angle: "Docker Desktop의 무게와 라이선스 부담을 피하려는 팀 관점에서 설치(공식 README 기준), docker context 전환 방식, 로컬 도메인·터널 기능을 정리하고 OrbStack, Colima, Podman Desktop과 비교합니다(비교 대상은 공식 자료 확인 여부 표시). LocalStack, AWS Emulator 글과 연결합니다. 생성 한 달 미만 프로젝트라는 성숙도 한계도 짚습니다."
+    sources:
+      - https://github.com/libracoder/kiri
+      - https://docs.runkiri.com
+      - https://runkiri.com/releases/
+    proposed_at: 2026-11-23
+    status: approved
+  - id: rust-anything
+    category: opensource
+    title: "rust-anything: 원본 동작을 녹화해 두고 코딩 에이전트의 Rust 재작성을 조각마다 검증하는 도구"
+    why: "2026-11-16 생성된 저장소가 약 7,900 스타(2026-11-23 기준)를 모았습니다. MIT 라이선스로 Node.js, Python, Go, Java 등의 앱을 기록·포팅·대조·전환 4단계로 옮기며, Prettier 포팅에서 17,224개 기록 실행이 원본과 바이트 단위로 같다고 보고합니다."
+    angle: "'번역이 아니라 증명'이라는 주장의 실체: 기록 범위 밖은 잡지 못한다는 공식 한계(how-it-works), 작은 함수는 오히려 느려질 수 있다는 점, 핫 패스만 옮기는 go 명령. 에이전트에게 맡긴 리라이트를 어떻게 검증 가능하게 만드는지라는 관점에서 VerifierBench 글과 연결합니다."
+    sources:
+      - https://github.com/erkamyaman/rust-anything
+      - https://github.com/erkamyaman/rust-anything/blob/main/docs/how-it-works.md
+      - https://github.com/erkamyaman/rust-anything/blob/main/docs/real-world.md
+    proposed_at: 2026-11-23
+    status: approved
