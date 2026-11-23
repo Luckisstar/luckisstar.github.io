@@ -537,7 +537,8 @@ items:
       - https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE
     proposed_at: 2026-11-09
     priority: high
-    status: approved
+    status: published
+    post: _posts/tech/2026-11-24-kimi-k3-1-pro.md
   - id: claude-message-threads
     category: tech
     title: "Claude API 메시지 스레드: 대화 기록을 매번 보내지 않는 Messages API 베타"
