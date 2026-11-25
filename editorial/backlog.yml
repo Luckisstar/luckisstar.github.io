@@ -559,7 +559,8 @@ items:
       - https://github.com/ghostty-org/ghostty
     proposed_at: 2026-11-09
     priority: high
-    status: approved
+    status: published
+    post: _posts/opensource/2026-11-26-libghostty.md
   - id: tokeneconomizer
     category: opensource
     title: "TokenEconomizer: 같은 저장소에서 반복되는 코딩 에이전트 비용을 학습으로 줄이는 플러그인"
